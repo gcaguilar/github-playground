@@ -7,7 +7,7 @@ import retrofit2.http.Path
 import retrofit2.http.Query
 
 private const val ORGS = "orgs/"
-private const val REPO = "repos"
+private const val REPO = "/repos"
 
 interface GithubService {
     @GET("$ORGS{org}$REPO")
