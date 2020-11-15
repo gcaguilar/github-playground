@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="@dimen/medium">
+
+    <TextView
+        android:id="@+id/text_repository_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        tools:text="Hello world" />
+
+    <TextView
+        android:id="@+id/text_repository_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_repository_name"
+        android:layout_marginTop="@dimen/small"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        tools:text="This is your first project" />
+
+    <ImageView
+        android:id="@+id/image_repository_owner"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="@dimen/medium"
+        android:layout_below="@+id/text_repository_description" />
+
+    <TextView
+        android:id="@+id/text_repository_author"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/image_repository_owner"
+        android:layout_alignBottom="@+id/image_repository_owner"
+        android:layout_marginStart="@dimen/small"
+        android:layout_marginLeft="@dimen/small"
+        android:layout_toEndOf="@+id/image_repository_owner"
+        android:layout_toRightOf="@+id/image_repository_owner"
+        android:gravity="start|center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        tools:text="gcaguilar" />
+
+</RelativeLayout>
