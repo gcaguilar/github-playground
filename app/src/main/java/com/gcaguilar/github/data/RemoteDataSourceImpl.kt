@@ -4,9 +4,8 @@ import com.gcaguilar.github.data.mapper.RepoMapper
 import com.gcaguilar.github.domain.RemoteDataSource
 import com.gcaguilar.github.domain.entity.RepoEntity
 import io.reactivex.Single
-import javax.inject.Inject
 
-class RemoteDataSourceImpl @Inject constructor(
+class RemoteDataSourceImpl constructor(
     private val githubService: GithubService,
     private val repoMapper: RepoMapper
 ) : RemoteDataSource {

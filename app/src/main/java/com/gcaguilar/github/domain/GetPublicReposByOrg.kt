@@ -5,9 +5,8 @@ import com.gcaguilar.github.common.SingleUseCase
 import com.gcaguilar.github.common.ThreadExecutor
 import com.gcaguilar.github.domain.entity.RepoEntity
 import io.reactivex.Single
-import javax.inject.Inject
 
-class GetPublicReposByOrg @Inject constructor(
+class GetPublicReposByOrg constructor(
     private val remoteDataSource: RemoteDataSource,
     threadExecutor: ThreadExecutor,
     postExecutionThread: PostExecutionThread

@@ -3,9 +3,8 @@ package com.gcaguilar.github.presentation
 import com.gcaguilar.github.R
 import com.gcaguilar.github.common.Mapper
 import com.gcaguilar.github.domain.entity.RepoEntity
-import javax.inject.Inject
 
-class RepoMvpMapper @Inject constructor(
+class RepoMvpMapper constructor(
     private val ownerMvpMapper: OwnerMvpMapper
 ) : Mapper<RepoEntity, RepoMvp> {
     override fun map(input: RepoEntity): RepoMvp = RepoMvp(
