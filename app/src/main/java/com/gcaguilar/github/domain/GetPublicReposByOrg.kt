@@ -7,13 +7,13 @@ import com.gcaguilar.github.domain.entity.RepoEntity
 import io.reactivex.Single
 
 class GetPublicReposByOrg constructor(
-    private val remoteDataSource: RemoteDataSource,
+    private val repository: GithubRepoRepository,
     threadExecutor: ThreadExecutor,
     postExecutionThread: PostExecutionThread
 ) : SingleUseCase<List<RepoEntity>, Params>(threadExecutor, postExecutionThread) {
     public override fun buildUseCaseObservable(params: Params?): Single<List<RepoEntity>> {
         return params?.let {
-            remoteDataSource.getPublicReposByOrg(it.orgName)
+            repository.getRepositoriesByOrg(it.orgName)
         } ?: throw IllegalArgumentException("Cannot get public repos without name")
     }
 }
