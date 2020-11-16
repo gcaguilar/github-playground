@@ -30,4 +30,32 @@ class OwnerMapperTest {
 
         assertThat(result).isNotEqualTo(OwnerDummy.ownerEntity)
     }
+
+    @Test
+    fun `Should map to owner db given valid owner model `() {
+        val result = ownerMapper.mapToDb(OwnerDummy.ownerModel)
+
+        assertThat(result).isEqualTo(OwnerDummy.ownerDb)
+    }
+
+    @Test
+    fun `Should map to owner entity given valid owner db `() {
+        val result = ownerMapper.mapToEntity(OwnerDummy.ownerDb)
+
+        assertThat(result).isEqualTo(OwnerDummy.ownerEntity)
+    }
+
+    @Test
+    fun `Should return not equal owner entity given different owner db `() {
+        val result = ownerMapper.mapToEntity(OwnerDummy.otherOwnerDb)
+
+        assertThat(result).isNotEqualTo(OwnerDummy.ownerEntity)
+    }
+
+    @Test
+    fun `Should return not equal owner model given different owner dbo `() {
+        val result = ownerMapper.mapToDb(OwnerDummy.otherOwnerModel)
+
+        assertThat(result).isNotEqualTo(OwnerDummy.ownerDb)
+    }
 }

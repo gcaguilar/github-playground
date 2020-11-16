@@ -7,7 +7,7 @@ import com.gcaguilar.github.dummy.OwnerDummy
 import org.junit.Before
 import org.junit.Test
 
-class OwnerMvpMapperTest {
+class OwnerDbMvpMapperTest {
     private lateinit var ownerMvpMapper: OwnerMvpMapper
 
     @Before
