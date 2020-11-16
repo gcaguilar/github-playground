@@ -5,16 +5,16 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "repositories")
-data class Repository(
+data class RepositoryDb(
     @PrimaryKey
     val repositoryId: Int,
     val name: String,
     val fork: Boolean,
     val description: String,
-    @Embedded val owner: Owner
+    @Embedded val ownerDb: OwnerDb
 )
 
-data class Owner(
+data class OwnerDb(
     val ownerId: Int,
     val login: String,
     val avatarUrl: String
