@@ -30,6 +30,15 @@ val networkModule = module {
             .build()
             .create(GithubService::class.java)
     }
+
+    single { NetworkConnection(context = androidContext()) }
+}
+
+val databaseModule = module {
+    single {
+        Room.databaseBuilder(androidContext(), GithubDataBase::class.java, "github-db").build()
+    }
+    single { get<GithubDataBase>().repsotioryDao() }
 }
 
 val dataModule = module {
